@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="3edd2227-8fbe-4732-af52-e49c1281161c" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="gittesting1_apiFlow" doc:id="02862931-2e9a-4705-a10e-8f56032ea486" >
+		<http:listener doc:name="Listener" doc:id="b51ee1db-4a6e-495f-8bbd-de9e1146f064" config-ref="HTTP_Listener_config" path="/gittest1"/>
+		<logger level="INFO" doc:name="Logger" doc:id="df509a7b-dbc3-4a8c-9789-e7300af28193" message="gittest1"/>
+	</flow>
+</mule>
